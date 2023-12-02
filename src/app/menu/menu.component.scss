@@ -1,0 +1,28 @@
+.menu{
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  background-color: #222D32;
+
+  color: white;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 8px;
+  padding: 10px 0;
+  border-radius: 10px;
+}
+
+@media(min-width: 692px){
+  .menu {
+    flex-direction: row;
+    margin-bottom: 8px;
+  }
+
+  a{
+    margin: 0 8px 0 0;
+  }
+}
+

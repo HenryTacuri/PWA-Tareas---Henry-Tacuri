@@ -1,0 +1,53 @@
+<form class="formulario">
+
+  <fieldset>
+
+    <legend>Registra tu tarea</legend>
+
+    <div class="campo">
+      <label for="txtNombre">Nombre:</label>
+      <input id="txtNombre" name="txtNombre" [(ngModel)]="tarea.nombre">
+    </div>
+
+    <div class="campo">
+      <label for="txtDescripcion">Descripcion:</label>
+      <input id="txtDescripcion" name="txtDescripcion" [(ngModel)]="tarea.descripcion">
+    </div>
+
+    <div class="campo">
+      <label for="txtCategoria">Categoria:</label>
+      <input list="categorias" id="txtCategoria" name="txtCategoria" [(ngModel)]="tarea.categoria">
+    </div>
+
+    <div class="campo">
+      <label for="txtFechaEntrega">Fecha de entrega:</label>
+      <input type="date" id="txtFechaEntrega" name="txtFechaEntrega" [(ngModel)]="tarea.fechaEntrega">
+    </div>
+
+  </fieldset>
+
+  <button (click)="saveTarea()" class="btn">Guardar</button>
+
+</form>
+
+<!--
+  Este div sirve para mostrar el mensaje "Tarea Registrada", el mensaje se muestra por
+  3 segundos. La duración del mensaje se hace con con la función setTimeout que se encuentra en
+  el archvio ts de este componente.
+
+  El mensaje se muestra cuando la variable tareaRegistrada del archivo ts de este componente
+  es true.
+  
+-->
+<div *ngIf="tareaRegistrada === true" class="mensajes">
+  Tarea Registrada
+</div>
+
+
+<!--
+  Este div sirve para mostrar el mensaje "Llene todos los campos por favor", el mensaje se muestra
+  cuando la variable formularioLleno del archivo ts de este componente es true.
+-->
+<div *ngIf="formularioLleno === true" class="mensajes">
+  Llene todos los campos por favor
+</div>

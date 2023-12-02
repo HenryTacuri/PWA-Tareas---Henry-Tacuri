@@ -1,0 +1,8 @@
+<div class="menu">
+  <a *ngFor="let link of paginas" href="#" [routerLink]="link.path">{{link.titulo}}</a>
+</div>
+
+<!--
+  routerLink nos permite navegar hacia una determinada ruta (navegamos hacia una determinada
+  página).
+-->

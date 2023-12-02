@@ -1,0 +1,41 @@
+<form class="formulario">
+
+  <fieldset>
+
+    <legend>Editar Tarea</legend>
+
+    <div class="campo">
+      <label for="txtNombre">Nombre:</label>
+      <input id="txtNombre" name="txtNombre" [(ngModel)]="tarea.nombre">
+    </div>
+
+    <div class="campo">
+      <label for="txtDescripcion">Descripcion:</label>
+      <input id="txtDescripcion" name="txtDescripcion" [(ngModel)]="tarea.descripcion">
+    </div>
+
+    <div class="campo">
+      <label for="txtCategoria">Categoria:</label>
+      <input list="categorias" id="txtCategoria" name="txtCategoria" [(ngModel)]="tarea.categoria">
+    </div>
+
+    <div class="campo">
+      <label for="txtFechaEntrega">Fecha de entrega:</label>
+      <input type="date" id="txtFechaEntrega" name="txtFechaEntrega" [(ngModel)]="tarea.fechaEntrega">
+    </div>
+
+  </fieldset>
+
+  <button (click)="updateTarea()" class="btn">Editar</button>
+
+</form>
+
+<div *ngIf="tareaModificada === true" class="mensajes">
+  Tarea Modificada
+</div>
+
+<div *ngIf="formularioLleno === true" class="mensajes">
+  Llene todos los campos por favor
+</div>
+
+

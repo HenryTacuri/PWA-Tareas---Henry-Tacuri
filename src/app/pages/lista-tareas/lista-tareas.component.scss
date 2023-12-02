@@ -1,0 +1,124 @@
+.contenedor {
+  display: grid;
+  grid-template-columns: none;
+  grid-template-rows: repeat(1, 1fr);
+  width: 90%;
+  margin: 0 auto;
+}
+
+.btn {
+  background-color: #0e5b80;
+  display: block;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 900;
+  padding: 1rem;
+  transition: background-color .3s ease-out;
+  text-align: center;
+  border: none;
+  width: 90%;
+  margin: 10px auto;
+  border-radius: 10px;
+}
+
+.btn:hover {
+  background-color: #1448d8;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .btn {
+    width: auto;
+    display: inline-block;
+    margin-left: 1rem;
+  }
+}
+
+.text-center {
+  text-align: center;
+  color: white;
+}
+
+.card {
+  background-color: #EBECEC;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  color: #1F2124;
+  text-align: center;
+  padding: 10px 10px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+  transform: scale(1.05);
+  transition-duration: 300ms;
+}
+
+@media (min-width: 768px) {
+  .card {
+    margin: 20px auto 0px auto;
+    width: 90%;
+  }
+
+  .contenedor {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 0.5rem;
+    width: 100%;
+    margin: none;
+  }
+
+}
+
+.buscarTarea {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+
+.buttonBuscar {
+  background-color: #0e5b80;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 900;
+  padding: 0.5rem;
+  transition: background-color .3s ease-out;
+  text-align: center;
+  border: none;
+  border-radius: 22px;
+  margin-top: 5px;
+}
+
+.buttonBuscar:hover {
+  background-color: #1448d8;
+  cursor: pointer;
+}
+
+.inputBuscar {
+  border:none;
+  outline:none;
+  height: 35px;
+  border-radius:22px;
+  padding:0 18px;
+}
+
+@media (min-width: 768px) {
+  .buscarTarea {
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .buttonBuscar {
+    margin-left: 5px;
+    margin-top: 0px;
+  }
+
+  .inputBuscar {
+    border:none;
+    outline:none;
+    border-radius:22px;
+    padding:0 18px;
+  }
+}
+
+

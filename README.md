@@ -1,27 +1,41 @@
-# PwaTareas
+Pasos para la ejecución del proyecto
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.7.
+Instalar las dependencias del proyecto
+1) Ejecutar el comando npm install.
 
-## Development server
+Agregar Firebase Hosting al proyecto
+1) Crear un proyecto en firebase.
+2) Desde el sitio web de firebase agregamos el hosting al proyecto.
+3) Instalamos firebase CLI con el comando npm install -g firebase-tools. Este paso se realiza si 
+no tenemos instalado firebase CLI.
+4) Ejecutamos el comando firebase login, para realizar la autenticación en la cuenta.
+5) Después de ejecutar el comando firebase init, seleccionamos el servicio Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys.
+6) Seleccionamos el proyecto que creamos en firebase.
+7) Ejecutamos el comando npm run build.
+8) En el archivo firebase.json, en el campo public del hosting ponemos la ruta de la carpeta que se creo en en la carpeta dist. La ruta sería dist/pwa-tareas, esta ruta puede variar.
+9) Ejecutamos el comando firebase deploy para desplegar la aplicación.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+Configurar firestore en el proyecto
+1) Ejecutar el comando firebase init, seleccionamos el servicio de firestore.
+2) Creamos la base de datos.
+3) Ejecutamos el comando ng add @angular/fire.
+4) Seleccionamos solamente firestore.
+5) Seleccionamos el proyecto creado en firebase.
+6) Creamos una nueva aplicación.
+7) En la configuración del proyecto, en la sección Tus Apps, tenemos la apliación que creamos en 
+el paso 6. En la configuración del SDK seleccionamos npm, copiamos los campos del firebaseConfig 
+en el archivo enviroment.ts
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+PWA
+Para hacer que la aplicación sea pwa ejecutamos el comando ng add @angular/pwa.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+En caso de tener el inconveniente de que el cursor salta a la siguiente línea cuando se deja de escribir código por poco tiempo, esto lo solucionamos poniendo false en el campo insert_final_newline del archivo .editorconfig.
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+

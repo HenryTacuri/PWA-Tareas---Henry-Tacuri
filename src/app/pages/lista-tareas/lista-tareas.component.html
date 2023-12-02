@@ -1,0 +1,46 @@
+<h1 class="text-center">Listado de Tareas</h1>
+
+<div class="buscarTarea">
+  <input type="text" placeholder="Ingrese el nombre" [(ngModel)]="nombreTarea" class="inputBuscar">
+  <button (click)="bucarTarea()" class="buttonBuscar">Buscar</button>
+</div>
+
+
+<div class="contenedor">
+  <div *ngFor="let tarea of listaTareas | async" class="card">
+    <strong>Nombre:</strong>
+    <a>{{tarea.nombre}}</a>
+
+    <br>
+
+    <strong>Descripción:</strong>
+    <a>{{tarea.descripcion}}</a>
+
+    <br>
+
+    <strong>Categoria:</strong>
+    <a>{{tarea.categoria}}</a>
+
+    <br>
+
+    <strong>Fecha de entrega:</strong>
+    <a>{{tarea.fechaEntrega}}</a>
+
+    <br>
+
+    <!--
+      En la ruta del routerLink enviamos el uid de la tarea, esta ruta recibe un parámetro que se
+      define en el app-routing.
+    -->
+    <button routerLink="/paginas/editar-tarea/{{tarea.uid}}" class="btn">Editar</button>
+
+
+    <button (click)="deleteTarea(tarea.uid)" class="btn">Eliminar</button>
+
+  </div>
+</div>
+
+
+
+
+
